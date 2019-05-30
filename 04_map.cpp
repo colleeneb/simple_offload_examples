@@ -12,7 +12,7 @@ int main( int argv, char** argc ) {
       x[i] = i;
     }
 
-#pragma omp target map(y,x)
+#pragma omp target
   {
     int i;
     for(i=0;i<N;i++)
