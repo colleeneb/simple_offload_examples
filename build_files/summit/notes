@@ -3,7 +3,7 @@
  To run, the simplest is to submit an interactive job:
 
  1. Submit an interactive job:
-    $ bsub -W 1:00 -nnodes 1 -P CSC354 -Is $SHELL
+    $ bsub -W 1:00 -nnodes 1 -P Project -Is $SHELL
 
  2. Set the environment:
     $ source build_files/summit/environment_setup.sh
