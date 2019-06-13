@@ -1,0 +1,17 @@
+ Notes on running the simple tests on JLSE.
+
+ To run, the simplest is to submit an interactive job
+ to the gpu_v100_smx2 queue:
+
+ 1. Submit an interactive job:
+    $ qsub -I -n 1 -t 1:00 -q gpu_v100_smx2
+
+ 2. Set the environment:
+    $ source build_files/jlse/environment_setup.sh
+
+ 3. Compile the files
+    $ make -f build_files/jlse/Makefile.jlse
+
+ 4. Run each example directly
+    $ ./01_target_construct
+    $ nvprof --print-gpu-trace ./04_map
