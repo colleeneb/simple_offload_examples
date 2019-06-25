@@ -1,0 +1,27 @@
+ Notes on running the simple tests on Cooley.
+
+ Make sure that you ~/.soft.cooley has:
+ ```
+ +cuda-10.0
+ +gcc-6.4.0
+ +mvapich2
+ @default
+ ```
+ Then either resoft or log in again
+
+
+ To run, the simplest is to submit an interactive job
+ to the debug queue:
+
+ 1. Submit an interactive job:
+    $ qsub -I -n 1 -t 60 -q debug
+
+ 2. Set the environment:
+    $ source build_files/cooley/environment_setup.sh
+
+ 3. Compile the files
+    $ make -f build_files/cooley/Makefile.cooley
+
+ 4. Run each example directly
+    $ ./01_target_construct
+    $ nvprof --print-gpu-trace ./04_map
