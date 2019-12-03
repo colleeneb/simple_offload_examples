@@ -1,0 +1,15 @@
+ Notes on running the simple tests on Cori-gpu.
+
+ To run, the simplest is to submit an interactive job:
+
+ 1. Set the environment:
+    $ source build_files/cori_gpu/environment_setup.sh
+
+ 2. Submit an interactive job:
+    $ salloc -C gpu -N 1 -t 60 -c 10 --gres=gpu:1 -A m1759
+
+ 3. Compile the files
+    $ make -f build_files/cori_gpu/Makefile.cori_gpu
+
+ 4. Use srun to run each simple example:
+    $ srun -n 1 ./a.out
